@@ -5,6 +5,8 @@ export const AppContainer = styled.div`
   display: flex;
   flex: 1;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const primaryColor = '#4d4dff';
@@ -35,9 +37,34 @@ export const materialDefaultTheme: { [key: string]: any } = {
       styleOverrides: {
         root: {
           backgroundColor: primaryColor,
+          textTransform: 'capitalize',
           '&:hover': {
             backgroundColor: primaryColorHover,
           },
+        },
+      },
+    },
+    MuiFormControlLabel: {
+      styleOverrides: {
+        root: {
+          alignItems: 'start',
+        },
+      },
+    },
+    MuiCheckbox: {
+      styleOverrides: {
+        root: {
+          padding: '0 9px',
+        },
+      },
+    },
+    MuiButtonBase: {
+      styleOverrides: {
+        root: {
+          '&.MuiCheckbox-root.Mui-checked, &.MuiCheckbox-root.MuiCheckbox-indeterminate':
+            {
+              color: primaryColor,
+            },
         },
       },
     },
