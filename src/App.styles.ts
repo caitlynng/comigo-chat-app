@@ -30,6 +30,7 @@ export const materialDefaultTheme: { [key: string]: any } = {
         root: {
           color: primaryColor,
           textDecoration: 'none',
+          cursor: 'pointer'
         },
       },
     },

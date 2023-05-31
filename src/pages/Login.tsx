@@ -78,7 +78,11 @@ const Login: React.FC = () => {
             </Button>
             <Grid container justifyContent='flex-end'>
               <Grid item>
-                <Link href='/register' variant='body2'>
+                <Link
+                  href='/register'
+                  variant='body2'
+                  component='button'
+                >
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>
