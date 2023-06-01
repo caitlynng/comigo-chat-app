@@ -1,5 +1,6 @@
-import * as React from 'react';
-// import Avatar from '@mui/material/Avatar';
+import React, { ChangeEvent, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
@@ -8,15 +9,48 @@ import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-// import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Alert from '@mui/material/Alert';
+import AlertTitle from '@mui/material/AlertTitle';
+
 import { materialDefaultTheme } from 'App.styles';
+import { LoginFormData, useLogin } from 'hooks/authHooks';
 
 const defaultTheme = createTheme(materialDefaultTheme);
 
 const Login: React.FC = () => {
+  const { formData, setFormData, handleSubmit } = useLogin();
+  const navigate = useNavigate();
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setFormData((prevFormData: LoginFormData) => ({
+      ...prevFormData,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const onGoToRegister = () => {
+    navigate('/register');
+  };
+
+  const { email, password, error, loading } = formData;
+
+  const [showAlert, setShowAlert] = useState(true);
+
+  useEffect(() => {
+    if (error) {
+      const timer = setTimeout(() => {
+        setShowAlert(false);
+      }, 3000);
+
+      return () => {
+        clearTimeout(timer);
+        setShowAlert(true);
+      };
+    }
+  }, [error]);
+
   return (
     <ThemeProvider theme={defaultTheme}>
       <Container component='main' maxWidth='xs'>
@@ -37,10 +71,17 @@ const Login: React.FC = () => {
           </Typography>
           <Box
             component='form'
-            // onSubmit={handleSubmit}
+            onSubmit={handleSubmit}
             noValidate
             sx={{ mt: 1 }}
           >
+            {error && showAlert && (
+              <Grid item xs={12}>
+                <Alert severity='error'>
+                  <AlertTitle>{error}</AlertTitle>
+                </Alert>
+              </Grid>
+            )}
             <TextField
               margin='normal'
               required
@@ -50,6 +91,9 @@ const Login: React.FC = () => {
               name='email'
               autoComplete='email'
               autoFocus
+              value={email}
+              disabled={loading}
+              onChange={handleChange}
             />
             <TextField
               margin='normal'
@@ -60,6 +104,9 @@ const Login: React.FC = () => {
               type='password'
               id='password'
               autoComplete='current-password'
+              value={password}
+              onChange={handleChange}
+              disabled={loading}
             />
             <FormControlLabel
               control={<Checkbox value='remember' color='primary' />}
@@ -79,7 +126,7 @@ const Login: React.FC = () => {
             <Grid container justifyContent='flex-end'>
               <Grid item>
                 <Link
-                  href='/register'
+                  onClick={onGoToRegister}
                   variant='body2'
                   component='button'
                 >
