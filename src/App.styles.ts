@@ -5,8 +5,6 @@ export const AppContainer = styled.div`
   display: flex;
   flex: 1;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
 `;
 
 export const primaryColor = '#4d4dff';
@@ -30,7 +28,7 @@ export const materialDefaultTheme: { [key: string]: any } = {
         root: {
           color: primaryColor,
           textDecoration: 'none',
-          cursor: 'pointer'
+          cursor: 'pointer',
         },
       },
     },

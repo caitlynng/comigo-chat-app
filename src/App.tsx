@@ -1,20 +1,52 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from 'redux/store';
+import { AppContainer } from './App.styles';
+import ChatPage from 'pages/Chat';
+import NavigationBar from 'components/NavigationBar';
 import Register from 'pages/Register';
 import Login from 'pages/Login';
-import ChatPage from 'pages/Chat';
-import { AppContainer } from './App.styles';
+import AuthProvider from 'context/AuthContext';
+import PrivateRoute from 'components/PrivateRoute';
+import PublicOnlyRoute from 'components/PublicOnlyRoute';
 
 const App: React.FC = () => (
-  <AppContainer>
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<ChatPage />} />
-        <Route path='/register' element={<Register />} />
-        <Route path='/login' element={<Login />} />
-      </Routes>
-    </BrowserRouter>
-  </AppContainer>
+  <Provider store={store}>
+    <AppContainer>
+      <AuthProvider>
+        <BrowserRouter>
+          <NavigationBar />
+          <Routes>
+            <Route
+              path='/'
+              element={
+                <PrivateRoute>
+                  <ChatPage />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path='/register'
+              element={
+                <PublicOnlyRoute>
+                  <Register />
+                </PublicOnlyRoute>
+              }
+            />
+            <Route
+              path='/login'
+              element={
+                <PublicOnlyRoute>
+                  <Login />
+                </PublicOnlyRoute>
+              }
+            />
+          </Routes>
+        </BrowserRouter>
+      </AuthProvider>
+    </AppContainer>
+  </Provider>
 );
 
 export default App;
