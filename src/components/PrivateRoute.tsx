@@ -10,7 +10,6 @@ const PrivateRoute: React.FC<Props> = ({ children }) => {
   const { currentUser } = useContext(AuthContext);
   const location = useLocation();
 
-  console.log(currentUser);
   if (currentUser) {
     return children;
   }

@@ -11,59 +11,61 @@ export const primaryColor = '#4d4dff';
 export const primaryColorHover = '#6666ff';
 
 export const materialDefaultTheme: { [key: string]: any } = {
-  components: {
-    MuiTextField: {
-      styleOverrides: {
-        root: {
-          '& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline,.MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline, .MuiInputLabel-root.Mui-focused ':
-            {
-              borderColor: primaryColor,
-              color: primaryColor,
-            },
-        },
-      },
-    },
-    MuiLink: {
-      styleOverrides: {
-        root: {
-          color: primaryColor,
-          textDecoration: 'none',
-          cursor: 'pointer',
-        },
-      },
-    },
-    MuiButton: {
-      styleOverrides: {
-        root: {
-          backgroundColor: primaryColor,
-          textTransform: 'capitalize',
-          '&:hover': {
-            backgroundColor: primaryColorHover,
+  MuiTextField: {
+    styleOverrides: {
+      root: {
+        '& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline,.MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline, .MuiInputLabel-root.Mui-focused ':
+          {
+            borderColor: primaryColor,
+            color: primaryColor,
           },
-        },
       },
     },
-    MuiFormControlLabel: {
-      styleOverrides: {
-        root: {
-          alignItems: 'start',
-        },
+  },
+  MuiLink: {
+    styleOverrides: {
+      root: {
+        color: primaryColor,
+        textDecoration: 'none',
+        cursor: 'pointer',
       },
     },
-    MuiCheckbox: {
-      styleOverrides: {
-        root: {
-          padding: '0 9px',
-        },
+  },
+
+  MuiFormControlLabel: {
+    styleOverrides: {
+      root: {
+        alignItems: 'start',
       },
     },
-    MuiButtonBase: {
-      styleOverrides: {
-        root: {
-          '&.MuiCheckbox-root.Mui-checked, &.MuiCheckbox-root.MuiCheckbox-indeterminate':
-            {
-              color: primaryColor,
-            },
+  },
+  MuiCheckbox: {
+    styleOverrides: {
+      root: {
+        padding: '0 9px',
+      },
+    },
+  },
+  MuiButtonBase: {
+    styleOverrides: {
+      root: {
+        '&.MuiCheckbox-root.Mui-checked, &.MuiCheckbox-root.MuiCheckbox-indeterminate':
+          {
+            color: primaryColor,
+          },
+      },
+    },
+  },
+};
+
+export const authPageDefaultTheme: { [key: string]: any } = {
+  MuiButton: {
+    styleOverrides: {
+      root: {
+        backgroundColor: primaryColor,
+        textTransform: 'capitalize',
+        '&:hover': {
+          backgroundColor: primaryColorHover,
         },
       },
     },

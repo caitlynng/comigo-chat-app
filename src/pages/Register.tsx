@@ -15,10 +15,15 @@ import Container from '@mui/material/Container';
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
 
-import { materialDefaultTheme } from 'App.styles';
+import { materialDefaultTheme, authPageDefaultTheme } from 'App.styles';
 import { RegistrationFormData, useRegistration } from 'hooks/authHooks';
 
-const defaultTheme = createTheme(materialDefaultTheme);
+const defaultTheme = createTheme({
+  components: {
+    ...materialDefaultTheme,
+    ...authPageDefaultTheme,
+  },
+});
 
 const Register: React.FC = () => {
   const navigate = useNavigate();
@@ -149,11 +154,7 @@ const Register: React.FC = () => {
             </Button>
             <Grid container justifyContent='flex-end'>
               <Grid item>
-                <Link
-                  onClick={onGoToLogin}
-                  variant='body2'
-                  component='button'
-                >
+                <Link onClick={onGoToLogin} variant='body2' component='button'>
                   Already have an account? Sign in
                 </Link>
               </Grid>
