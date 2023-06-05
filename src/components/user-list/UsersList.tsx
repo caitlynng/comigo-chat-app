@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Container } from './UsersList.styles';
-import { useDispatch, useSelector } from 'react-redux';
-import { AppDispatch, RootState } from 'redux/store';
+import { useDispatch } from 'react-redux';
+import { AppDispatch } from 'redux/store';
 import { collection, onSnapshot, query, where } from 'firebase/firestore';
 import { firestoreDB } from 'firebaseConfig';
 import { AuthContext } from 'context/AuthContext';
@@ -14,7 +14,6 @@ import InviteFriendPanel from './InviteFriendPanel';
 const UsersList: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
   const { currentUserId } = useContext(AuthContext);
-  const { myFriends } = useSelector((state: RootState) => state.users);
   const [openInvitePanel, setOpenInvitePanel] = useState(false);
 
   const toggleOpenInvitePanel = () => {
