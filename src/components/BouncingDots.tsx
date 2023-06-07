@@ -14,7 +14,7 @@ const waveAnimation = keyframes`
 
 const Wave = styled.div`
   position: absolute;
-  bottom: 50px;
+  bottom: 70px;
   text-align: center;
   height: 30px;
   padding-left: 10px;
@@ -25,7 +25,7 @@ const Wave = styled.div`
     height: 0.6rem;
     border-radius: 50%;
     margin-right: 3px;
-    background: #303131;
+    background: #4d4dff;
     animation: ${waveAnimation} 1.3s linear infinite;
 
     &:nth-child(2) {

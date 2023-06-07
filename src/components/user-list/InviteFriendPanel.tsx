@@ -49,8 +49,8 @@ const InviteFriendPanel: React.FC<Props> = ({ toggleOpenInvitePanel }) => {
       const querySnapshot = await getDocs(
         query(
           collection(firestoreDB, 'users'),
-          where('email', '==', enteredEmail)
-        )
+          where('email', '==', enteredEmail),
+        ),
       );
 
       querySnapshot.forEach((doc) => {
@@ -63,7 +63,7 @@ const InviteFriendPanel: React.FC<Props> = ({ toggleOpenInvitePanel }) => {
         setSearchUserError('');
       } else {
         setSearchUserError(
-          'User does not exist. Is the email address correct?'
+          'User does not exist.Please check the email address again.',
         );
       }
 

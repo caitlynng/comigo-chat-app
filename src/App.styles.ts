@@ -5,6 +5,7 @@ export const AppContainer = styled.div`
   display: flex;
   flex: 1;
   flex-direction: column;
+  background-color: #f8f9fa;
 `;
 
 export const primaryColor = '#4d4dff';

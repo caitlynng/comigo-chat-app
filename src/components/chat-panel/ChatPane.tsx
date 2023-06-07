@@ -14,7 +14,11 @@ import SubmitMessageInput from './SubmitMessageInput';
 
 const ChatPane: React.FC = () => {
   const {
-    userToChatWith: { uid: otherUserId, name: otherUserName },
+    userToChatWith: {
+      uid: otherUserId,
+      name: otherUserName,
+      email: otherUserEmail,
+    },
   } = useSelector((state: RootState) => state.conversation);
   const hasSelectedOtherUser = otherUserId.length > 0;
 
@@ -24,9 +28,13 @@ const ChatPane: React.FC = () => {
   return (
     <ChatContainer>
       <UserToChatWithName>
-        {hasSelectedOtherUser
-          ? otherUserName
-          : 'Select a user on the left to chat with!'}
+        {hasSelectedOtherUser ? (
+          <div>
+            {otherUserName} - {otherUserEmail}
+          </div>
+        ) : (
+          'Select a user on the left to chat with!'
+        )}
       </UserToChatWithName>
       {hasSelectedOtherUser && (
         <>

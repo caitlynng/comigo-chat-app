@@ -1,18 +1,22 @@
 import styled from 'styled-components';
+import { primaryColor } from 'App.styles';
 
 const Message = styled.div`
-  border: 2px solid black;
-  border-radius: 7px;
-  padding: 15px;
+  border-radius: 20px;
+  padding: 10px 15px;
   margin: 8px 0px 0px 0px;
+  cursor: pointer;
 `;
 
 export const MessageFromMe = styled(Message)`
   align-self: right;
+  background-color: ${primaryColor};
+  color: white;
 `;
 
 export const MessageFromFriend = styled(Message)`
   align-self: left;
+  background-color: #f8f9fa;
 `;
 
 interface MessageRowProps {

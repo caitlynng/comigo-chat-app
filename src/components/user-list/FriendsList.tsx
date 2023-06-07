@@ -11,6 +11,7 @@ import {
   List,
   UsersListMessage,
 } from './FriendsList.styles';
+import { primaryColor } from 'App.styles';
 
 interface Props {
   toggleOpenInvitePanel: VoidFunction;
@@ -24,17 +25,23 @@ const FriendsList: React.FC<Props> = ({ toggleOpenInvitePanel }) => {
       <Header>
         <TextField
           id='outlined-search'
-          label='Search conversation'
+          label='Search'
           type='search'
           size='small'
           fullWidth
-          // sx={{
-          //   '& .MuiOutlinedInput-root': {
-          //     borderRadius: '20px', // Add custom border radius for MuiOutlinedInput
-          //   },
-          // }}
+          sx={{
+            '& .MuiOutlinedInput-root': {
+              borderRadius: '20px',
+            },
+          }}
         />
-        <IconButton color='success' onClick={toggleOpenInvitePanel}>
+        <IconButton
+          color='success'
+          onClick={toggleOpenInvitePanel}
+          sx={{
+            color: primaryColor,
+          }}
+        >
           <PersonAddIcon />
         </IconButton>
       </Header>

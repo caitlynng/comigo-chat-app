@@ -3,6 +3,7 @@ import SendIcon from '@mui/icons-material/Send';
 import React from 'react';
 import { Container } from './SubmitMessageInput.styles';
 import useSendMessages from './useSendMessages';
+import { primaryColor } from 'App.styles';
 
 const SubmitMessageInput: React.FC = () => {
   const { onSendMessage, textToSend, onTextEntered } = useSendMessages();
@@ -12,12 +13,19 @@ const SubmitMessageInput: React.FC = () => {
       <TextField
         onChange={onTextEntered}
         value={textToSend}
-        placeholder='Message'
+        placeholder='Type something...'
         fullWidth
+        sx={{
+          '& .MuiOutlinedInput-notchedOutline': {
+            border: 'none',
+          },
+        }}
       />
-      <Button variant='contained' type='submit' endIcon={<SendIcon />}>
-        Send
-      </Button>
+      <Button
+        type='submit'
+        endIcon={<SendIcon />}
+        sx={{ color: primaryColor }}
+      />
     </Container>
   );
 };
