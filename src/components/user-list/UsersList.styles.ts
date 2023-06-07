@@ -6,3 +6,8 @@ export const Container = styled.div`
   width: 300px;
   padding: 10px 0px 10px 10px;
 `;
+
+export const UserInfo = styled.div`
+  display: flex;
+  align-items: center;
+`;

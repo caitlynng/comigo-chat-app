@@ -1,4 +1,5 @@
 import React from 'react';
+import { signOut } from 'firebase/auth';
 import { TextField, IconButton } from '@mui/material';
 import { useSelector } from 'react-redux';
 import { RootState } from 'redux/store';
@@ -46,6 +47,7 @@ const FriendsList: React.FC<Props> = ({ toggleOpenInvitePanel }) => {
         </IconButton>
       </Header>
       <ScrollContainer>
+        <h4>Community</h4>
         {myFriends.length === 0 ? (
           <UsersListMessage>No user to display</UsersListMessage>
         ) : (

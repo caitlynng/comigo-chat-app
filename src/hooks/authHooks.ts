@@ -1,6 +1,7 @@
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  updateProfile,
 } from 'firebase/auth';
 import { doc, setDoc, Timestamp } from 'firebase/firestore';
 import { useState, FormEvent } from 'react';
@@ -101,6 +102,7 @@ export const useRegistration = () => {
         createdAt: Timestamp.fromDate(new Date()),
       });
 
+      await updateProfile(result.user, { displayName: name });
       navigate(fromPage, { replace: true });
     } catch (firebaseError: any) {
       setFormData((prevFormData) => ({
