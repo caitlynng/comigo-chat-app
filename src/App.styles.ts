@@ -5,7 +5,8 @@ export const AppContainer = styled.div`
   display: flex;
   flex: 1;
   flex-direction: column;
-  background-color: #f8f9fa;
+  letter-spacing: 0.5px;
+  /* background-color: #f8f9fa; */
 `;
 
 export const primaryColor = '#4d4dff';
@@ -57,6 +58,16 @@ export const materialDefaultTheme: { [key: string]: any } = {
       },
     },
   },
+  MuiButton: {
+    styleOverrides: {
+      root: {
+        textTransform: 'capitalize',
+        '&:hover': {
+          backgroundColor: 'transparent',
+        },
+      },
+    },
+  },
 };
 
 export const authPageDefaultTheme: { [key: string]: any } = {
@@ -64,7 +75,6 @@ export const authPageDefaultTheme: { [key: string]: any } = {
     styleOverrides: {
       root: {
         backgroundColor: primaryColor,
-        textTransform: 'capitalize',
         '&:hover': {
           backgroundColor: primaryColorHover,
         },

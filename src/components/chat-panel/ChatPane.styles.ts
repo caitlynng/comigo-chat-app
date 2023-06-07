@@ -4,14 +4,14 @@ export const ChatContainer = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
-  background-color: white;
+  background-color: #f8f9fa;
   border: 1px solid #e9ecef;
 `;
 export const UserToChatWithName = styled.div`
   display: flex;
   flex-direction: row;
   padding: 20px 20px;
-  background-color: #f8f9fa;
+  /* background-color: #f8f9fa; */
 `;
 
 export const ChatScrollWrapper = styled.div`
