@@ -75,6 +75,7 @@ export const authPageDefaultTheme: { [key: string]: any } = {
     styleOverrides: {
       root: {
         backgroundColor: primaryColor,
+        textTransform: 'capitalize',
         '&:hover': {
           backgroundColor: primaryColorHover,
         },

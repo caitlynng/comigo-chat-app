@@ -1,4 +1,3 @@
-import { Button } from '@mui/material';
 import React from 'react';
 import { OtherUser } from 'types';
 import useSelectUser from './useSelectUser';
@@ -11,21 +10,9 @@ const OtherFriend: React.FC<Props> = ({ user }) => {
   const { onSelectUser } = useSelectUser(user);
 
   return (
-    <UserInfoContainer>
-      <InitialAvatar>K</InitialAvatar>
-      <UserName onClick={onSelectUser}>
-        {/* <Button
-          onClick={onSelectUser}
-          sx={{
-            textTransform: 'capitalize',
-            justifyContent: 'start',
-            color: '#0d0c22',
-          }}
-        >
-          {user.name}
-        </Button> */}
-        {user.name}
-      </UserName>
+    <UserInfoContainer onClick={onSelectUser}>
+      <InitialAvatar bgc='#d1d5db'>{user.name.charAt(0)}</InitialAvatar>
+      <UserName>{user.name}</UserName>
     </UserInfoContainer>
   );
 };

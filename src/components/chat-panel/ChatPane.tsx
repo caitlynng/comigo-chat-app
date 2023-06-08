@@ -12,7 +12,6 @@ import {
   UserEmail,
 } from './ChatPane.styles';
 import {
-  UserInfoContainer,
   UserInfo,
   UserName,
   InitialAvatar,
@@ -37,7 +36,9 @@ const ChatPane: React.FC = () => {
       <UserToChatWithContainer>
         {hasSelectedOtherUser ? (
           <>
-            <InitialAvatar>{otherUserName.charAt(0)}</InitialAvatar>
+            <InitialAvatar bgc='#d1d5db'>
+              {otherUserName.charAt(0)}
+            </InitialAvatar>
             <UserInfo>
               <UserName>{otherUserName}</UserName>
               <UserEmail>{otherUserEmail}</UserEmail>

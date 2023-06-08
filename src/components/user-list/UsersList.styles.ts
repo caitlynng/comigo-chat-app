@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+interface InitialAvatarProps {
+  bgc: string;
+}
+
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -13,6 +17,7 @@ export const UserInfoContainer = styled.div`
   padding: 0.5em;
   margin-right: 0.5em;
   margin-top: auto;
+  cursor: pointer;
   &:hover {
     background-color: #f8f9fa;
   }
@@ -21,16 +26,15 @@ export const UserInfo = styled.div``;
 export const UserName = styled.div`
   font-weight: 600;
 `;
-export const InitialAvatar = styled.div`
+export const InitialAvatar = styled.div<InitialAvatarProps>`
   align-items: center;
   display: flex;
   justify-content: center;
-  background-color: #ffb84d;
+  background-color: ${(props) => props.bgc};
   color: #fff;
   border-radius: 50%;
   height: 2.5rem;
   width: 2.5rem;
-  cursor: pointer;
   margin-right: 0.5em;
 `;
 

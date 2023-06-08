@@ -96,7 +96,7 @@ const UsersList: React.FC = () => {
           )}
         </AnimatePresence>
         <UserInfoContainer>
-          <InitialAvatar>A</InitialAvatar>
+          <InitialAvatar bgc='#ffb84d'>A</InitialAvatar>
           <UserInfo>
             <UserName>{currentUser?.displayName}</UserName>
             <Button

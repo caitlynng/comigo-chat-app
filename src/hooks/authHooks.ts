@@ -64,7 +64,11 @@ export const useRegistration = () => {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
-    const { name, email, password, isCheck } = formData;
+    const { name, password, isCheck } = formData;
+
+    let { email } = formData;
+
+    email = email.toLowerCase();
 
     if (!name || !email || !password) {
       setFormData((prevFormData) => ({
