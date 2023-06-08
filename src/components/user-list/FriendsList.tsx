@@ -46,7 +46,7 @@ const FriendsList: React.FC<Props> = ({ toggleOpenInvitePanel }) => {
         </IconButton>
       </Header>
       <ScrollContainer>
-        <h4>Community</h4>
+        <h4>Members</h4>
         {myFriends.length === 0 ? (
           <UsersListMessage>No user to display</UsersListMessage>
         ) : (

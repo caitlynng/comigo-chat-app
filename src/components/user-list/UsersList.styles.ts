@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { primaryColor, primaryColorHover } from 'App.styles';
 
 export const Container = styled.div`
   display: flex;
@@ -11,10 +10,14 @@ export const Container = styled.div`
 export const UserInfoContainer = styled.div`
   display: flex;
   align-items: center;
+  padding: 0.5em;
+  margin-right: 0.5em;
+  margin-top: auto;
+  &:hover {
+    background-color: #f8f9fa;
+  }
 `;
-export const UserInfo = styled.div`
-  margin-left: 0.5em;
-`;
+export const UserInfo = styled.div``;
 export const UserName = styled.div`
   font-weight: 600;
 `;
@@ -28,6 +31,7 @@ export const InitialAvatar = styled.div`
   height: 2.5rem;
   width: 2.5rem;
   cursor: pointer;
+  margin-right: 0.5em;
 `;
 
 export const usersListMaterialTheme: { [key: string]: any } = {

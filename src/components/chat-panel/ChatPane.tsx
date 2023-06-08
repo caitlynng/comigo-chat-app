@@ -8,8 +8,15 @@ import ChatMessages from './ChatMessages';
 import {
   ChatScrollWrapper,
   ChatContainer,
-  UserToChatWithName,
+  UserToChatWithContainer,
+  UserEmail,
 } from './ChatPane.styles';
+import {
+  UserInfoContainer,
+  UserInfo,
+  UserName,
+  InitialAvatar,
+} from '../user-list/UsersList.styles';
 import SubmitMessageInput from './SubmitMessageInput';
 
 const ChatPane: React.FC = () => {
@@ -27,15 +34,19 @@ const ChatPane: React.FC = () => {
 
   return (
     <ChatContainer>
-      <UserToChatWithName>
+      <UserToChatWithContainer>
         {hasSelectedOtherUser ? (
-          <div>
-            {otherUserName} - {otherUserEmail}
-          </div>
+          <>
+            <InitialAvatar>{otherUserName.charAt(0)}</InitialAvatar>
+            <UserInfo>
+              <UserName>{otherUserName}</UserName>
+              <UserEmail>{otherUserEmail}</UserEmail>
+            </UserInfo>
+          </>
         ) : (
           'Select a user on the left to chat with!'
         )}
-      </UserToChatWithName>
+      </UserToChatWithContainer>
       {hasSelectedOtherUser && (
         <>
           <ChatScrollWrapper onScroll={onScroll}>

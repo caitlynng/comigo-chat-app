@@ -4,10 +4,10 @@ export const ChatContainer = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
-  background-color: #f8f9fa;
+  background-color: white;
   border: 1px solid #e9ecef;
 `;
-export const UserToChatWithName = styled.div`
+export const UserToChatWithContainer = styled.div`
   display: flex;
   flex-direction: row;
   padding: 20px 20px;
@@ -18,6 +18,11 @@ export const ChatScrollWrapper = styled.div`
   flex: 1;
   overflow-y: auto;
   padding: 10px 10px 10px 10px;
-  background-color: white;
+  background-color: #f9fafb;
   border-top: 1px solid #e9ecef;
+`;
+
+export const UserEmail = styled.div`
+  color: #adb5bd;
+  font-size: 0.85em;
 `;
