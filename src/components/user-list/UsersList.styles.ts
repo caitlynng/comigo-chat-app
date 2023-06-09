@@ -35,7 +35,7 @@ export const InitialAvatar = styled.div<InitialAvatarProps>`
   border-radius: 50%;
   height: 2.5rem;
   width: 2.5rem;
-  margin-right: 0.5em;
+  margin: 0 0.5em;
 `;
 
 export const usersListMaterialTheme: { [key: string]: any } = {

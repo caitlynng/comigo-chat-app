@@ -16,7 +16,6 @@ const Message: React.FC<Props> = ({ message }) => {
 
   const MessageComponent = isSentByMe ? MessageFromMe : MessageFromFriend;
 
-  console.log(message);
   return (
     <MessageRow isSentByMe={isSentByMe}>
       <MessageComponent>{message.text}</MessageComponent>
