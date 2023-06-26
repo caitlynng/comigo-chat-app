@@ -12,6 +12,7 @@ import {
   ChatContainer,
   UserToChatWithContainer,
   UserEmail,
+  IsTypingContainer,
 } from './ChatPane.styles';
 import {
   UserInfo,
@@ -57,7 +58,9 @@ const ChatPane: React.FC = () => {
             <ChatMessages />
             <div ref={scrollRef} />
           </ChatScrollWrapper>
-          {otherPersonIsTyping && <BouncingDots />}
+          {otherPersonIsTyping && (
+            <IsTypingContainer>{otherUserName} is typing...</IsTypingContainer>
+          )}
           <SubmitMessageInput />
         </>
       ) : (

@@ -136,10 +136,9 @@ const Register: React.FC = () => {
                       onChange={handleChange}
                       disabled={loading}
                       name='isCheck'
-                      required
                     />
                   }
-                  label='Creating an account means you agree with our Terms of Service and Privacy Policy.'
+                  label='Creating an account means you agree with our Terms of Service and Privacy Policy'
                 />
               </Grid>
             </Grid>

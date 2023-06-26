@@ -26,3 +26,10 @@ export const UserEmail = styled.div`
   color: #adb5bd;
   font-size: 0.85em;
 `;
+
+export const IsTypingContainer = styled.div`
+  font-style: italic;
+  position: absolute;
+  bottom: 85px;
+  padding-left: 20px;
+`;

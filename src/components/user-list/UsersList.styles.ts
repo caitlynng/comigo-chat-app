@@ -7,9 +7,11 @@ interface InitialAvatarProps {
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  width: 300px;
   padding: 10px 0px 10px 10px;
   flex: 1;
+  @media screen and (min-width: 600px) {
+    max-width: 300px;
+  }
 `;
 
 export const UserInfoContainer = styled.div`
