@@ -3,7 +3,7 @@
 > A simple, multi-user text-based chat app.
 
 <p align="center">
-  <img src="./demo.gif" alt="screenshot" width="45%" height="450px"/>
+  <img src="./demo.gif" alt="screenshot" width="70%"/>
 </p>
 
 This is a Typescript [Vite](https://vitejs.dev/) app using Firebase for the backend and is deployed to Vercel [here](https://comigo.vercel.app).
